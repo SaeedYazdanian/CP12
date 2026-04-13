@@ -1,38 +1,50 @@
 def add(a, b):
-    # return sum
-    pass
+    return a + b
 
 def maxOfTwo(a, b):
-    # return bigger number
-    pass
+    if a > b:
+        return a
+    else:
+        return b
 
 def isEven(n):
-    # return True/False
-    pass
+    return a % 2 == 0
 
 def countVowels(s):
-    # return number of vowels
-    pass
+    cnt = 0
+    for ch in "aeiou":
+        cnt += s.count(ch)
+    return cnt
 
 def reverseString(s):
-    # return reversed string
-    pass
+    return s[::-1]
 
 def isPrime(n):
-    # return True/False
-    pass
+    for i in range(2,n):
+        if n % i == 0:
+            return False
+    return True
 
 def sumOfFactors(n):
-    # return sum of all factors of a number
-    pass
+    sum = 0
+    for i in range(1,n+1):
+        if n % i == 0:
+            sum += i
+    return sum
 
 def numOfFactor(n):
-    # count how many factors n has
-    pass
+    cnt = 0
+    for i in range(1,n+1):
+        if n % i == 0:
+            cnt += 1
+    return cnt
 
 def removeNegatives(lst):
-    # return new list without negatives
-    pass
+    pos = []
+    for x in lst:
+        if x >= 0:
+            pos.append(x)
+    return pos
 
 
 def print_menu():
