@@ -1,11 +1,18 @@
 import pygame
 
 pygame.init()
-
 WIDTH = 800
 HEIGHT = 600
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Circle Clicker")
+
+background = pygame.image.load("res\\background.jpg")
+background = pygame.transform.scale(background, (WIDTH, HEIGHT))
+
+spaceship = pygame.image.load("res\\spaceship.png").convert_alpha()
+spaceship = pygame.transform.scale(spaceship, (100, 100))
+
+
 
 font = pygame.font.SysFont(None, 40)
 clock = pygame.time.Clock()
@@ -17,7 +24,8 @@ score = 0
 
 
 def draw_circle(x, y, radius):
-    pygame.draw.circle(screen, (0, 120, 255), (x, y), radius)
+    #pygame.draw.circle(screen, (0, 120, 255), (x, y), radius)
+    screen.blit(spaceship, (x - radius, y - radius))
 
 
 def draw_score(points):
@@ -51,7 +59,8 @@ while running:
                 score = score + 1
                 circle_x, circle_y = get_next_circle_position(circle_x, circle_y)
 
-    screen.fill((30, 30, 30))
+    #screen.fill((30, 30, 30))
+    screen.blit(background, (0, 0))
     draw_circle(circle_x, circle_y, circle_radius)
     draw_score(score)
     pygame.display.update()
