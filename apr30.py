@@ -27,8 +27,11 @@ def draw_board():
                 screen.blit(text, (col * 200 + 70, row * 200 + 55))
 
 def check_win(player):
-    if board[0][0] == board[0][1] == board[0][2] == player:
-        return True
+    for i in range(3):
+        if board[i][0] == board[i][1] == board[i][2] == player:
+            return True
+
+
     # TODO: Check rows
     # TODO: Check columns
     # TODO: Check diagonals
