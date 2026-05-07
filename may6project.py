@@ -1,8 +1,9 @@
 ROWS = 6
 COLS = 7
 
+# a one line code to make the matrix
+#board = [['-' for c in range(COLS)] for r in range(ROWS)]
 board = []
-
 for i in range(ROWS):
     row = []
     for j in range(COLS):
@@ -65,3 +66,4 @@ while running:
             current_player = "O"
         else:
             current_player = "X"
+
