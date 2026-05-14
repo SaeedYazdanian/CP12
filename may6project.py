@@ -31,6 +31,10 @@ def drop_piece(col, player):
 
 def check_win(player):
     # TODO: Check horizontal win
+    for r in range(ROWS):
+        for c in range(COLS):
+            if c+3 < COLS and board[r][c] == board[r][c+1] == board[r][c+2] == board[r][c+3] == player:
+                return True
 
     # TODO: Check vertical win
 
