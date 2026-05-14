@@ -8,8 +8,25 @@ grid = []
 for i in range(9):
     row = [int(x) for x in input().split()]
     grid.append(row)
-#second code to read a 9x9 matrix
-grid = [[int(x) for x in input().split()] for i in range(9)]
+print(grid)
+#checking every row
+good = True
+for r in range(9):
+    if len(set(grid[r])) < 9:
+        good = False
+#code to check if column 0 is all unique
+temp = []
+for r in range(9):
+    temp.append(grid[r][0])
+if len(set(temp)) < 9:
+    good = False
 
-print(grid[0])
-print(len(set(grid[0])))
+#repeat the code above for every column
+
+
+
+
+
+
+
+
