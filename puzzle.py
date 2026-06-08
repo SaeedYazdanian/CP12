@@ -1,7 +1,7 @@
 import pygame
 
 pygame.init()
-
+s = pygame.mixer.Sound("notification.wav")
 WIDTH = 450
 HEIGHT = 520
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -45,8 +45,8 @@ def draw_board():
 
 def move(row, col):
     # TODO:
-    # if board[row+1][col]==0:
-    #     board[row + 1][col],board[row][col] = board[row][col],board[row+1][col]
+    if board[row+1][col]==0:
+        board[row + 1][col],board[row][col] = board[row][col],board[row+1][col]
     # Move the clicked number only if it is beside 0
     # Also increase moves by 1 after a valid move
     pass
@@ -69,6 +69,7 @@ while running:
             running = False
 
         if event.type == pygame.MOUSEBUTTONDOWN:
+            s.play()
             mouse_x, mouse_y = pygame.mouse.get_pos()
 
             if mouse_y < 450:

@@ -9,15 +9,15 @@ mat = [
 
 def fill(i, j):
     if j in [len(mat[0]),-1] or i in [len(mat), -1]:
-        return
+        return 0
     if mat[i][j] in [1,2]:
-        return
+        return 0
     mat[i][j] = 1
-    fill(i, j+1)
-    fill(i, j-1)
-    fill(i+1, j)
-    fill(i-1, j)
+    return 1 + fill(i, j+1) + fill(i, j-1) + fill(i+1, j) + fill(i-1, j)
 
-fill(5,4)
+print(fill(0,0))
+
 for row in mat:
     print(*row)
+
+
